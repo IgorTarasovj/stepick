@@ -3,6 +3,7 @@ import select
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.support.ui import Select
 
 link = "https://suninjuly.github.io/selects1.html"
 
@@ -19,13 +20,8 @@ try:
     sum_numbers = int(num1)+int(num2)
     print(sum_numbers)
 
-    select_list = browser.find_element(By.XPATH, "//select[@id='dropdown']")
-    select_list.click()
-
-    select_answer = browser.find_element(By.XPATH, "//option[@value='"+str(sum_numbers)+"']")
-    select_answer.click()
-
-    select_list.click()
+    select = Select(browser.find_element(By.TAG_NAME, "select"))
+    select.select_by_value(str(sum_numbers))
 
     submit_button = browser.find_element(By.XPATH, "//button[@type='submit']")
     submit_button.click()
