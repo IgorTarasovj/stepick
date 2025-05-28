@@ -29,6 +29,7 @@
     <Compile Include="task_1_5.py" />
     <Compile Include="task_2_2.py" />
     <Compile Include="task_2_3.py" />
+    <Compile Include="task_2_4.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="task_2_1.py" />
